@@ -1,0 +1,29 @@
+{
+  "name": "desafiocadastro",
+  "version": "1.0.0",
+  "description": "### Desafio criado por Lucas Carrilho - [@devmagro](https://www.linkedin.com/in/karilho/)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RafaMoraes2004/desafioCadastro.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RafaMoraes2004/desafioCadastro/issues"
+  },
+  "homepage": "https://github.com/RafaMoraes2004/desafioCadastro#readme",
+  "devDependencies": {
+    "commitizen": "^4.3.1",
+    "cz-conventional-changelog": "^3.3.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
