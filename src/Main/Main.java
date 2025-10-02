@@ -1,16 +1,17 @@
 package Main;
 
+import Main.Services.ServiceCadastro;
 import Main.Utils.UtilReadPrint;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
         Scanner sc = new Scanner(System.in);
-
         UtilReadPrint rp = new UtilReadPrint();
+        
 
         String path = "/home/rafael/Área de trabalho/UDEMY-JAVA/desafioCadastro/data/formulario.txt";
         rp.printFile(path);
@@ -20,9 +21,10 @@ public class Main {
         System.out.println("Fechando programa....");
     }
 
-    public static void menu(Scanner sc) {
+    public static void menu(Scanner sc) throws Exception {
         int in;
-
+        ServiceCadastro se = new ServiceCadastro();
+        
         do {
             System.out.println("---------------------- MENU --------------------------");
             System.out.println();
@@ -39,7 +41,7 @@ public class Main {
                 in = sc.nextInt();
 
                 switch (in) {
-                    case 1 -> System.out.println("1 Cadastrar ");
+                    case 1 -> se.cadastro();
                     case 2 -> System.out.println("2 alterar");
                     case 3 -> System.out.println("3 deletar");
                     case 4 -> System.out.println("4 listar");
@@ -59,6 +61,7 @@ public class Main {
                 sc.nextLine();
                 in = 0;
             }
+
 
         } while (in != 6);
 
