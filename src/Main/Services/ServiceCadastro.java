@@ -4,10 +4,8 @@ import Main.Entities.Pet;
 import Main.Utils.Sexo;
 import Main.Utils.Tipo;
 import Main.Utils.UtilReadPrint;
-
 import java.io.BufferedWriter;
 import java.io.FileWriter;
-import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.InputMismatchException;
@@ -49,10 +47,10 @@ public class ServiceCadastro {
         } catch (IllegalArgumentException e) {
             System.out.println("Nome invalido. Digite apenas letras.");
         }
-        if (sobrenome == "") {
+        if ("".equals(sobrenome)) {
             sobrenome = VAZIO;
         }
-        if (nome == "") {
+        if ("".equals(nome)) {
             throw new Exception("Nome não pode ficar vazio. Erro");
         }
 
@@ -127,8 +125,8 @@ public class ServiceCadastro {
 
         String path2 = "/home/rafael/Área de trabalho/UDEMY-JAVA/desafioCadastro/data/petsCadastrados/";
 
+        //ADD ESSA FUNC NAO PARTE DE UTILS 
         String nomeFormatado = pet.getNome().replaceAll("\\s+", "").toUpperCase();
-
         String arquivoNome = timestamp + "-" + nomeFormatado + ".TXT";
         String caminhoCompleto = path2 + "/" + arquivoNome;
 
@@ -140,7 +138,7 @@ public class ServiceCadastro {
             System.out.println("Arquivo salvo em: " + caminhoCompleto);
 
         } catch (Exception e) {
-            // TODO: handle exception
+
         }
     }
 

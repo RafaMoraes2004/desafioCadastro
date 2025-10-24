@@ -1,5 +1,6 @@
 package Main;
 
+import Main.Services.ServiceBuscar;
 import Main.Services.ServiceCadastro;
 import Main.Utils.UtilReadPrint;
 import java.util.InputMismatchException;
@@ -24,16 +25,16 @@ public class Main {
     public static void menu(Scanner sc) throws Exception {
         int in;
         ServiceCadastro se = new ServiceCadastro();
+        ServiceBuscar sb = new ServiceBuscar();
         
         do {
             System.out.println("---------------------- MENU --------------------------");
             System.out.println();
             System.out.println("1. Cadastrar um novo pet");
-            System.out.println("2. Alterar os dados do pet cadastrado");
+            System.out.println("2.  Buscar os dados do Pet Cadastrado");
             System.out.println("3. Deletar um pet cadastrado");
-            System.out.println("4. Listar todos os pets cadastrados");
-            System.out.println("5. Listar pets por algum critério (idade, nome, raça)");
-            System.out.println("6. Sair");
+            System.out.println("4. Alterar os dados do pet cadastrado");
+            System.out.println("5. Sair");
             System.out.println();
             System.out.println("Digite a opção que deseja: ");
 
@@ -42,11 +43,10 @@ public class Main {
 
                 switch (in) {
                     case 1 -> se.cadastro();
-                    case 2 -> System.out.println("2 alterar");
+                    case 2 -> sb.buscar();
                     case 3 -> System.out.println("3 deletar");
-                    case 4 -> System.out.println("4 listar");
-                    case 5 -> System.out.println("5 listar pets");
-                    case 6 -> System.out.println("6 sair");
+                    case 4 -> System.out.println("4 alterar pets");
+                    case 5 -> System.out.println("5 sair");
 
                     default -> {
                         System.out.println("Opção invalida");
@@ -63,7 +63,7 @@ public class Main {
             }
 
 
-        } while (in != 6);
+        } while (in != 5);
 
     }
 }

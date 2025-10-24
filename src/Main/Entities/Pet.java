@@ -35,6 +35,7 @@ public class Pet {
                 this.raca = raca;
         }
 
+        @Override
         public String toString() {
                 return nome + " " + sobrenome + "\n" + tipo + "\n" + sexo + "\n" + numero + "," + cidade + ", " + rua + "\n" + idade + "anos" + "\n" + peso + "kgs" + "\n" + raca;
             }
